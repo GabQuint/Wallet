@@ -26,8 +26,8 @@ class ScreenMain extends StatelessWidget {
             ),
           ],
         ),
-        bottomNavigationBar: const _BNbar(),
         body: const _Body(),
+        bottomNavigationBar: const _BNbar(),
       ),
     );
   }
@@ -71,24 +71,35 @@ class _Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        Padding(
-          padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
-          child: Row(
-            children: [
-              Text(
-                '1.312,000',
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
-        ),
+        _Amount(),
         Flag(),
         Dashboard(),
         PeopleProfiles()
       ],
+    );
+  }
+}
+
+class _Amount extends StatelessWidget {
+  const _Amount(
+    
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return const Padding(
+      padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
+      child: Row(
+        children: [
+          Text(
+            '1.312,000',
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
